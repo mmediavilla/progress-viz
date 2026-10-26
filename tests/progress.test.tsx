@@ -93,7 +93,7 @@ test('band keeps what the plugins beneath draw, below the bar', async ($, on) =>
   }
 })
 
-test('terminal pane draws Clawd beside each agent', async ($, on) => {
+test('terminal pane draws Blok beside each agent', async ($, on) => {
   mock.clock(on, { now: 1_000_000 })
   on('agent.spawn', () => ({ model: 'claude-haiku-5-5', agentId: 'a1' }))
   await $.agent.spawn({
@@ -114,8 +114,8 @@ test('terminal pane draws Clawd beside each agent', async ($, on) => {
     requestId: 'agent-progress',
     props: { title: 'Agents', isFocused: false, bodyColumns: 60, placement: 'dock' as const, scroll: { bodyRows: 20, offset: 0 }, view: {} },
   })
-  expect(await ui.find({ type: 'Text', text: /▐▛███▜/ })).toBeDefined()
-  expect(await ui.find({ type: 'Text', text: /▗▆▆▆▖/ })).toBeDefined()
+  expect(await ui.find({ type: 'Text', text: /█▄█▄█/ })).toBeDefined()
+  expect(await ui.find({ type: 'Text', text: /▄▆█▆▄/ })).toBeDefined()
   await ui.unmount()
 })
 
@@ -142,8 +142,8 @@ test('desktop pane still draws the costumed SVG avatar', async ($, on) => {
   })
   const drawn = JSON.stringify(await ui.drawn())
   expect(drawn).toContain('Explorer avatar')
-  expect(drawn).toContain('#D9B77E')
-  expect(drawn).not.toContain('▐▛███▜')
+  expect(drawn).toContain('#FFF6B0')
+  expect(drawn).not.toContain('█▄█▄█')
   await ui.unmount()
 })
 

@@ -6,11 +6,11 @@ import {
   agentProgress,
   avatarSvg,
   barSvg,
-  clawdRows,
+  blokRows,
   roleOf,
   terminalBar,
   turnProgress,
-  CLAWD_COLUMNS,
+  BLOK_COLUMNS,
   SPARK_FRAMES,
 } from './draw'
 import type { BarSegment } from './draw'
@@ -290,8 +290,8 @@ export const register: Register = on => {
 
           if (e.surface === 'terminal' || !('Svg' in els)) {
             const spark = isRunning ? SPARK_FRAMES[Math.floor(now / 120 + a.startedAt) % SPARK_FRAMES.length] : a.isFailed ? '✕' : '✓'
-            const sprite = clawdRows({ role, isRunning, isFailed: a.isFailed, now: now + a.startedAt })
-            const width = Math.max(10, e.props.bodyColumns - 6 - CLAWD_COLUMNS - 1)
+            const sprite = blokRows({ role, isRunning, isFailed: a.isFailed, now: now + a.startedAt })
+            const width = Math.max(10, e.props.bodyColumns - 6 - BLOK_COLUMNS - 1)
 
             return (
               <Box key={a.id} flexDirection="row" gap={1}>
