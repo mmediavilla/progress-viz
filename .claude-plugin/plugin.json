@@ -1,7 +1,7 @@
 {
   "name": "progress-viz",
-  "version": "0.1.3",
-  "description": "Animated progress bar above the prompt for the running turn, and an Agents pane with costumed Clawd avatars and per-agent progress",
+  "version": "0.2.0",
+  "description": "Animated progress bar above the prompt for the running turn, and an Agents pane with costumed Blok avatars and per-agent progress",
   "author": { "name": "Mc Louven Mediavilla" },
   "license": "MIT",
   "types": "./types/index.d.ts"
