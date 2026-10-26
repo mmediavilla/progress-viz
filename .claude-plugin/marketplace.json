@@ -1,0 +1,6 @@
+{
+  "name": "progress-viz",
+  "description": "Progress band and Agents pane for Claude Code",
+  "owner": { "name": "Mc Louven Mediavilla" },
+  "plugins": [{ "name": "progress-viz", "source": "./" }]
+}

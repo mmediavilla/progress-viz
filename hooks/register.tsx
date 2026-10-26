@@ -155,7 +155,7 @@ export const register: Register = on => {
     if (e.props.hasSurvey) {
       return next(e)
     }
-    // Draw above what the plugins beneath draw (the quiz button), rather than in place of it.
+    // Draw above what the plugins beneath draw, rather than in place of it.
     const below = await next(e)
     if (!isTurnShown && running.length === 0) {
       return below
